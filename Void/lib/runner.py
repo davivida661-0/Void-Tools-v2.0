@@ -100,36 +100,96 @@ def _token_generator():
     pause()
 
 
+def _discord_join_error(e, fr):
+    """Translate a Discord API error into a clear, honest message."""
+    import json
+    err_code = None
+    err_msg = ""
+    try:
+        body = json.loads(e.read().decode("utf-8", errors="replace"))
+        err_code = body.get("code") if isinstance(body, dict) else None
+        err_msg = str(body.get("message", "")) if isinstance(body, dict) else ""
+    except Exception:
+        pass
+
+    if e.code == 401:
+        return ("[!] Token invalide — vérifie le token" if fr else "[!] Invalid token — check the token")
+    if e.code == 404:
+        return ("[!] Invite invalide ou expirée" if fr else "[!] Invalid or expired invite")
+    if e.code == 429:
+        return ("[!] Trop de requêtes — attend quelques secondes et réessaie" if fr else "[!] Rate limited — wait a few seconds and retry")
+    if e.code == 403:
+        low = err_msg.lower()
+        if "banned" in low or err_code == 40007:
+            return ("[!] Banni de ce serveur — impossible de rejoindre" if fr else "[!] Banned from this server — cannot join")
+        if "verify" in low or err_code in (40002, 40004):
+            return ("[!] Vérification du compte requise (e-mail/téléphone) avant de rejoindre" if fr
+                    else "[!] Account verification required (email/phone) before joining")
+        if "captcha" in low:
+            return ("[!] Captcha requis — ce compte ne peut pas rejoindre en automatique" if fr
+                    else "[!] Captcha required — this account cannot join automatically")
+        if err_msg:
+            return f"[!] Accès refusé : {err_msg}"
+        return ("[!] Accès refusé (403) — invite introuvable ou compte bloqué" if fr
+                else "[!] Access denied (403) — invite not found or account blocked")
+    if err_code == 30001:
+        return ("[!] Limite de serveurs rejoints aujourd'hui atteinte" if fr else "[!] Daily join limit reached")
+    if err_code == 30002:
+        return ("[!] Limite de 100 serveurs atteinte" if fr else "[!] 100 guild limit reached")
+    if err_msg:
+        return f"[!] Erreur Discord ({e.code}) : {err_msg}"
+    return f"[!] Erreur HTTP {e.code}"
+
+
 def _token_joiner():
-    """Join Discord servers with token."""
+    """Join a Discord server with a user token (real POST /invites/{code})."""
     import urllib.request, urllib.error, json
     s = get_settings()
     fr = s.lang == "fr"
-    panel("TOKEN JOINER", "Rejoindre un serveur Discord" if fr else "Join a Discord server")
+    panel("TOKEN JOINER", "Rejoindre un serveur Discord avec un token" if fr else "Join a Discord server with a token")
     token = console.input("  [#FFD700]Token >> [/]").strip()
     invite = console.input("  [#FFD700]Invite URL or code >> [/]").strip()
     if not token or not invite:
         console.print("  [#FF2020][!] Token et invite requis[/]")
         pause()
         return
-    # Extract invite code
     code = invite.rstrip('/').split('/')[-1]
+
+    # Sanity-check the token before attempting the join
+    try:
+        check = urllib.request.Request(
+            "https://discord.com/api/v9/users/@me",
+            headers={"Authorization": token, "User-Agent": "Mozilla/5.0"},
+        )
+        with urllib.request.urlopen(check, timeout=10) as r:
+            me = json.loads(r.read())
+        console.print(f"  [#CCCCCC]{'Compte' if fr else 'Account'} : {me.get('username', '?')}[/]")
+    except urllib.error.HTTPError:
+        console.print("  [#FF2020][!] Token invalide — impossible de rejoindre[/]")
+        pause()
+        return
+    except Exception as e:
+        console.print(f"  [#FFD700]{'Connexion impossible, tentative de join quand même' if fr else 'Cannot reach Discord, trying join anyway'} ({e})[/]")
+
+    # Actual join: POST /invites/{code} with the token
     try:
         req = urllib.request.Request(
             f"https://discord.com/api/v9/invites/{code}",
-            headers={"Authorization": token, "Content-Type": "application/json"}
+            data=b"{}",
+            headers={
+                "Authorization": token,
+                "Content-Type": "application/json",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+            },
+            method="POST",
         )
-        with urllib.request.urlopen(req, timeout=10) as r:
-            data = json.loads(r.read())
-        guild = data.get("guild", {})
-        console.print(f"  [#00FF00]✔ Rejoint : {guild.get('name', code)}[/]")
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.loads(r.read().decode("utf-8", errors="replace"))
+        guild = (data or {}).get("guild") or {}
+        name = guild.get("name") or code
+        console.print(f"  [#00FF00]✔ {'Rejoint' if fr else 'Joined'} : {name}[/]")
     except urllib.error.HTTPError as e:
-        if e.code == 401:
-            console.print(f"  [#FF2020][!] Token invalide[/]")
-        elif e.code == 403:
-            console.print(f"  [#FF2020][!] Accès refusé — probablement banni du serveur[/]")
-        else:
-            console.print(f"  [#FF2020][!] Erreur HTTP {e.code}[/]")
+        console.print("  [#FF2020]" + _discord_join_error(e, fr) + "[/]")
     except Exception as e:
         console.print(f"  [#FF2020][!] Erreur : {e}[/]")
     pause()
@@ -408,6 +468,8 @@ def _friend_spammer():
 def _account_creator():
     """Account creation helper — opens registration page."""
     import webbrowser
+    s = get_settings()
+    fr = s.lang == "fr"
     panel("ACCOUNT CREATOR", "Aide à la création de compte" if fr else "Account creation helper")
     console.print(f"  [#CCCCCC]Ouvre la page de création Discord.[/]")
     console.print(f"  [#CCCCCC]Tu pourras aussi utiliser un token generator.[/]")
