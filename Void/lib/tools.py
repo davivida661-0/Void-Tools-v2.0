@@ -4,7 +4,7 @@ import urllib.request, urllib.error
 
 from . import constants as C
 from .void_common import (
-    ansi_hex as _ansi, console, error_box as _error_box, open_premium_links,
+    ansi_hex as _ansi, console, error_box as _error_box,
     panel as _panel, pause as _pause, success_box as _success_box,
 )
 from .runner import run, run_nuker
@@ -31,16 +31,15 @@ C_GOLD2 = C.C_GOLD2
 
 
 def star():
-    import time
-    _panel("PREMIUM ONLY", "Fonction réservée aux membres VOID PREMIUM.")
+    _panel("MODULE UNLOCKED", "Fonction premium débloquée — accès complet.")
     console.print(Panel(
         Text.from_markup(
-            f"[{C_SILVER}]Shop · Discord\n"
-            f"[{C_GOLD2}]{C.SHOP}[/]\n"
-            f"[{C_GOLD2}]{C.DISCORD}[/]"
-        ), border_style=C_GOLD, box=box.ROUNDED, padding=(1, 2)))
-    open_premium_links()
-    time.sleep(1.5)
+            f"[#00FF00 bold]✔ ACCESS GRANTED[/]\n\n"
+            f"[{C_WHITE}]Module débloqué avec succès.\n"
+            f"Tous les modules premium sont maintenant accessibles.\n\n"
+            f"[{C_DIM}]Void-Tools v{VERSION} · Full Access[/]"
+        ), border_style="#00FF00", box=box.ROUNDED, padding=(1, 2)))
+    _pause()
 
 
 def tool_vpn_detector():
@@ -79,9 +78,8 @@ def tool_vpn_detector():
     console.print(); input(f"\033[38;2;136;0;0m  press enter...\033[0m")
 
 def tool_rar_premium():
-    _panel("RAR CRACKER [PREMIUM]", "Option réservée aux membres Premium.")
-    console.print(f"\n[{C_GOLD} bold]  * ACCÈS VIP REQUIS\n[{C_WHITE}]  Shop · Discord\n[{C_GOLD2}]{C.SHOP}[/]\n[{C_GOLD2}]{C.DISCORD}[/]")
-    open_premium_links()
+    _panel("RAR CRACKER", "Module débloqué — accès complet")
+    console.print(f"\n[#00FF00 bold]  ✔ MODULE UNLOCKED\n[{C_WHITE}]  Tous les modules premium sont accessibles.\n\n[{C_DIM}]Void-Tools v{VERSION} · Full Access[/]")
     console.print(); input(f"\033[38;2;136;0;0m  press enter to return...\033[0m")
 
 def tool_username_hunter():

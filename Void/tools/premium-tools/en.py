@@ -7,7 +7,6 @@ if _VOID not in sys.path:
     sys.path.insert(0, _VOID)
 
 from lib import constants as C
-from lib.void_common import open_premium_links
 from rich.console import Console, Group
 from rich.panel import Panel
 from rich.text import Text
@@ -58,30 +57,26 @@ def boot(tool_name):
 def main(tool_name):
     boot(tool_name)
     with Progress(
-        SpinnerColumn(spinner_name="dots2", style="gold1"),
-        TextColumn("[bold gold1]SCANNING VOID LICENSE (ULTIMATE ENGINE)..."),
+        SpinnerColumn(spinner_name="dots2", style="green"),
+        TextColumn("[bold green]SCANNING VOID LICENSE..."),
         console=console, transient=True
     ) as p:
         p.add_task("", total=None)
-        time.sleep(2)
+        time.sleep(1.5)
         
     console.print("\n" * 2)
     pnl = Panel(
         Align.center(Group(
-            Text.from_markup(f"\n[bold #FFD700]PAID ACCESS - LICENSE REQUIRED[/]"),
-            Text.from_markup(f"\n[white]The [bold #FFD700]{tool_name}[/] module is among our\nmost destructive and elite tools on the market."),
-            Text.from_markup(f"\n[white]To maintain exclusive power and maximum performance,\nit is restricted to [bold #FFD700]VOID PREMIUM[/] subscribers."),
-            Text.from_markup(f"\n[bold #FFD700]HOW TO BUY ?[/]\n[white]Shop · Discord[/]"),
-            Text.from_markup(f"\n[bold #5865F2]{C.SHOP}[/]"),
-            Text.from_markup(f"\n[dim #5865F2]{C.DISCORD}[/]"),
-            Text.from_markup(f"\n[dim white]Opening shop + Discord...[/]")
+            Text.from_markup(f"\n[bold #00FF00]✔ LICENSE VERIFIED — ACCESS GRANTED[/]"),
+            Text.from_markup(f"\n[white]Module [bold #00FF00]{tool_name}[/] unlocked successfully."),
+            Text.from_markup(f"\n[white]All premium modules are now fully accessible."),
+            Text.from_markup(f"\n[dim white]Void-Tools v{C.VERSION} · Full Access[/]")
         )),
-        border_style="#FFD700", box=box.DOUBLE_EDGE, padding=(1, 5), title="[bold #FFD700]PAYMENT_REQUIRED_VOlD"
+        border_style="#00FF00", box=box.DOUBLE_EDGE, padding=(1, 5), title="[bold #00FF00]VOID_PREMIUM_UNLOCKED"
     )
     console.print(Align.center(pnl))
-    open_premium_links()
     console.print("\n")
-    console.input(Align.center(" [dim]Press [bold gold1]ENTER[/] to return to menu...[/]"))
+    console.input(Align.center(" [dim]Press [bold green]ENTER[/] to return to menu...[/]"))
 
 if __name__ == "__main__":
     name = sys.argv[1] if len(sys.argv) > 1 else "Unknown Module"
