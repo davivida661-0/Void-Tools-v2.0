@@ -8,6 +8,7 @@ import time
 
 from rich.align import Align
 from rich.console import Console
+from rich.markup import escape as markup_escape
 from rich.panel import Panel
 from rich.text import Text
 from rich import box
@@ -196,10 +197,11 @@ def panel(title, desc):
 
 
 def error_box(title: str, message: str, detail: str = None):
-    body = Text.from_markup(f"[{C.C_NEON} bold]{message}[/]")
+    # Escape dynamic text so brackets in errors/messages can never crash markup rendering
+    body = Text.from_markup(f"[{C.C_NEON} bold]{markup_escape(message)}[/]")
     if detail:
         body.append("\n")
-        body.append(Text.from_markup(f"[{C.C_DIM}]{detail}[/]"))
+        body.append(Text.from_markup(f"[{C.C_DIM}]{markup_escape(detail)}[/]"))
     console.print(Panel(body, title=f"[bold white]✖ {title}[/]", border_style=C.C_NEON, box=box.HEAVY, padding=(1, 2)))
 
 
