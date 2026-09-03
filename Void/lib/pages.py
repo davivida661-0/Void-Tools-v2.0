@@ -224,7 +224,7 @@ def build_pages_data(plugin_items=None):
             ("15", "Basic Auth BF", lambda: run("website-basic-auth-bf")),
             ("16", "Admin Hunter", lambda: run("website-admin-hunter")),
             ("17", "Dir Buster", lambda: run("website-dir-buster")),
-            ("18", "DDOS [PREMIUM]", _p("DDOS")),
+            ("18", "DDOS", _p("DDOS")),
         ],
         "generator": [
             ("01", "Nitro Gen", lambda: run("nitro-generator")),

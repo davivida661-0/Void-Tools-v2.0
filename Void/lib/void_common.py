@@ -70,7 +70,7 @@ def append_star_unlock_items(items):
     if not items:
         return items
     s = get_settings()
-    label = "Star pour débloquer [STAR]" if s.lang == "fr" else "Star for unlock [STAR]"
+    label = "Star pour débloquer" if s.lang == "fr" else "Star for unlock"
     base = len(items)
     extra = []
     for i in range(4):
