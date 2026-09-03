@@ -1,13 +1,29 @@
+# Void-Tools v2.1.0 Dependencies
+# Core UI and terminal interface
 colorama>=0.4.6
-rich>=13.0.0
-requests>=2.28.0
-websocket-client>=1.6.0
-dnspython>=2.3.0
-urllib3>=2.0.0
-beautifulsoup4>=4.12.0
-phonenumbers>=8.13.0
-pyzipper>=0.3.6
-pynput>=1.7.6
-discord.py>=2.3.0
-aiohttp>=3.9.0
-Pillow>=10.0.0
+rich>=15.0.0
+
+# HTTP and networking
+requests>=2.34.2
+aiohttp>=3.14.3
+urllib3>=2.7.0
+websocket-client>=1.9.2
+
+# DNS and email tools
+dnspython>=2.8.0
+phonenumbers>=9.0.38
+
+# Web scraping and parsing
+beautifulsoup4>=4.15.0
+
+# Discord integration
+discord.py>=2.7.1
+
+# System interaction
+pynput>=1.8.2
+
+# Archive handling
+pyzipper>=0.4.0
+
+# Image processing
+Pillow>=12.3.0

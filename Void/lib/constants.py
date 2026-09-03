@@ -3,13 +3,13 @@ import colorsys
 import os
 
 REMOTE_MANIFEST_URL = (
-    "https://raw.githubusercontent.com/V0id-v2/Void-Tools-v2.0/main/Void/config/remote-manifest.json"
+    "https://raw.githubusercontent.com/davivida661-0/Void-Tools-v2.0/main/Void/config/remote-manifest.json"
 )
 
 VERSION = "2.1.0"
-GITHUB = "https://github.com/V0id-v2/Void-Tools-v2.0"
+GITHUB = "https://github.com/davivida661-0/Void-Tools-v2.0"
 STAR_GIF_URL = (
-    "https://raw.githubusercontent.com/V0id-v2/Void-Tools-v2.0/main/Void/screenshots/star.PNG"
+    "https://raw.githubusercontent.com/davivida661-0/Void-Tools-v2.0/main/Void/screenshots/star.PNG"
 )
 NUKER_GITHUB = "https://github.com/void4real/Void-Nuke"
 DISCORD = "https://discord.gg/v0id"

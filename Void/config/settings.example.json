@@ -1,1 +1,27 @@
-
+{
+  "_comment": "Example settings file for Void-Tools. Copy this to settings.json and customize.",
+  "_documentation": "https://github.com/davivida661-0/Void-Tools-v2.0",
+  
+  "setup_complete": false,
+  "language": "fr",
+  "theme": "red",
+  "username": "Operator",
+  "skip_boot": false,
+  
+  "_theme_options": ["red", "green", "blue", "yellow", "purple", "cyan", "orange", "pink", "lime", "white", "rose", "gold", "rainbow"],
+  "_language_options": ["fr", "en"],
+  
+  "last_setup_config_rev": "0",
+  "last_remote_sync": 0,
+  "last_seen_config_rev": "0",
+  
+  "_notes": {
+    "theme": "Color theme for the interface. Use 'rainbow' for animated colors.",
+    "language": "Interface language: 'fr' for French, 'en' for English.",
+    "skip_boot": "Set to true to skip the boot animation on startup.",
+    "username": "Display name shown in the interface.",
+    "setup_complete": "Internal flag - do not edit manually.",
+    "last_remote_sync": "Timestamp of last remote sync (internal).",
+    "last_seen_config_rev": "Last seen config revision (internal)."
+  }
+}

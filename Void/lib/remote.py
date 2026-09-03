@@ -18,7 +18,7 @@ from .void_common import ansi_hex, cls, console, error_box, pause, success_box
 # Héberge Void/config/remote-manifest.json sur GitHub (branche main)
 REMOTE_URL = os.environ.get(
     "VOID_REMOTE_URL",
-    "https://raw.githubusercontent.com/V0id-v2/Void-Tools-v2.0/main/Void/config/remote-manifest.json",
+    "https://raw.githubusercontent.com/davivida661-0/Void-Tools-v2.0/main/Void/config/remote-manifest.json",
 )
 LOCAL_MANIFEST = os.path.join(C.CONFIG_DIR, "remote-manifest.json")
 CACHE_PATH = os.path.join(C.DATA_DIR, "remote-cache.json")
