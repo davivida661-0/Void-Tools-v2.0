@@ -144,11 +144,11 @@ def fmt_label(label: str, max_len: int = 24) -> str:
 
 
 def is_star_unlock(label: str) -> bool:
-    return "[STAR]" in str(label).upper()
+    return False
 
 
 def is_premium(label: str) -> bool:
-    return "[PREMIUM]" in str(label).upper() or is_star_unlock(label)
+    return False
 
 
 def sort_free_first(items):
